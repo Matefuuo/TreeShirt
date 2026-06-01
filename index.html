@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <icon rel="shortcut icon" href="Styles/Img/logo.png" type="image/x-icon">
+    <title>TreeShirts</title>
+    <link rel="stylesheet" href="Styles/indeS.css">
+</head>
+
+<body>
+    <header>
+       
+        <div class="logo-container" style="   width: 170px; height: 100px;">
+            <img src="Styles/Img/logo.png" width="132.25" height="118   " alt="TreeShirts Logo" style=" position: relative;top: -10px;left: 10%;">
+        </div>  
+        <h1>TreeShirts</h1>
+    
+        
+        <div class="boards">
+
+            <button class="board-button" >☰</button>
+
+            <div class="menu-overlay" id="topMenu">
+                <div class="menu-panel">
+                    
+                    <button class="menu-item">Inicio</button>
+                    <button class="menu-item">Productos</button>
+                    <button class="menu-item">Galería</button>
+                    <button class="menu-item">Contacto</button>
+                </div>
+            </div> 
+        </div>
+    
+        
+    </header>
+
+    <div class="content" style="background-image: url('C:/Users/Estudiante/Desktop/TreeShirts/Styles/Img/board3.png'); width: calc(1388px / 1.8);
+    height: calc(570px / 2.5);">
+        <div class="welcome">
+            <h2 style="font-size: 2.9em; ">Bienvenido a TreeShirts</h2>
+
+            <div style="position: relative; top: -20px;">
+                <div class="logo-container" style="   width: 330px; height: 150px;">
+                    <img src="Styles/Img/logo.png"  width="264.5" height="236" alt="TreeShirts Logo" style=" position: relative;top: -52px;left: 8%;">
+                </div>  
+                
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 1.2em;">Eres lo que vistes</p>
+    </div>
+
+    <div class="content" style="width: calc(1388px / 1.5);height: calc(570px / 1.8); background-image: url('C:/Users/Estudiante/Desktop/TreeShirts/Styles/Img/board4.png');">
+        <div class="bar">
+            <button class="bar-button"></button>
+        </div>
+    </div>
+
+    <script  type="module"  >
+        const boardButton = document.querySelector('.board-button');
+        const topMenu = document.getElementById('topMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        function toggleMenu() {
+            topMenu.classList.toggle('open');
+        }
+
+        boardButton.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', toggleMenu);
+        topMenu.addEventListener('click', (event) => {
+            if (event.target === topMenu) toggleMenu();
+        });
+    </script>
+</body>
+</html>

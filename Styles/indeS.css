@@ -9,7 +9,7 @@ body {
     color: #fff;
 
 
-    background-image: url('C:/Users/Estudiante/Desktop/TreeShirt/Styles/Img/waterfall.jpg');
+    background-image: url('Img/waterfall.jpg');
 }   
 
 
@@ -49,9 +49,8 @@ header {
 }
 
 .board-button{
-    background-image: url('C:/Users/Estudiante/Desktop/TreeShirts/Styles/Img/board1.png');
+    background-image: url('Img/board1.png');
     background-size: cover;
-
     color: white;
 
     width: 200px;

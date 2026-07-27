@@ -7,6 +7,41 @@
     <script type="text/javascript" src="https://jsdelivr.net"></script>
 </head>
 <body>
+
+
+
+     <script type="text/javascript">
+        // 1. Inicializar la herramienta con tu llave pública
+        emailjs.init("Sn86-KK7B0R-ymWux");
+
+        // 2. Obtener los elementos del formulario mediante el DOM
+        const form = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('btn-submit');
+
+        // 3. Escuchar el evento cuando el usuario presiona enviar
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Detener la recarga automática
+
+            // Modificar el botón para indicar que está procesando
+            submitBtn.value = "Enviando...";
+            submitBtn.disabled = true;
+
+            // 4. Hacer la conexión y envío de datos
+            emailjs.sendForm('service_014tmfh', 'service_014tmfh', this)
+                .then(function() {
+                    alert('¡Mensaje enviado correctamente!');
+                    form.reset(); // Vaciar las casillas
+                }, function(error) {
+                    alert('No se pudo enviar: ' + JSON.stringify(error));
+                })
+                .finally(function() {
+                    // Devolver el botón a su estado original al terminar
+                    submitBtn.value = "Enviar Mensaje";
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+
     
 </body>
 </html>

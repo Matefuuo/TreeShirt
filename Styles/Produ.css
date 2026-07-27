@@ -10,6 +10,82 @@
   font-style: normal;
 }
 
+/* From Uiverse.io by bociKond */ 
+.form {
+  --bg-light: #efefef;
+  --bg-dark: #707070;
+  --clr: #58bc82;
+  --clr-alpha: #9c9c9c60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.form .input-span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form input[type="email"],
+.form input[type="password"] {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus {
+  outline: 2px solid var(--clr);
+}
+
+.label {
+  align-self: flex-start;
+  color: var(--clr);
+  font-weight: 600;
+}
+
+.form .submit {
+  padding: 1rem 0.75rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 3rem;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form .submit:hover {
+  background-color: var(--clr);
+  color: var(--bg-dark);
+}
+
+.span {
+  text-decoration: none;
+  color: var(--bg-dark);
+}
+
+.span a {
+  color: var(--clr);
+}
+
+
 body {
     font-family: Arial, sans-serif;
     color: #fff;
@@ -159,8 +235,19 @@ header {
     opacity: 0.96;
 }
 
+.contentform {
+
+    border-radius: 50px;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 50px;
+    background-image: url('Img/board3.png');
+   
+}
+
 .content {
 
+    border-radius: 50px;
     margin-left: 8%;
     margin-top: 50px;
     background-image: url('Img/board3.png');
@@ -169,6 +256,7 @@ header {
 
 .content2 {
 
+    border-radius: 50px;
     margin-left: 8%;
     margin-top: 50px;
     background-image: url('Img/board4.png');
@@ -177,6 +265,7 @@ header {
 
 .content3 {
 
+    border-radius: 50px;
     margin-left: 8%;
     margin-top: 50px;
     background-image: url('Img/flecha.png');
@@ -190,15 +279,10 @@ header {
    
 }
 
-
-
-
 .btn_hub{
 
     width: 100%;
 }
-
-/* --- Carrusel board4 --- */
 
 .carousel-inner,
 .carousel-item {
@@ -211,13 +295,22 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 30px;
     padding: 0 90px;
     box-sizing: border-box;
 }
 
+.carousel-slide-img {
+    max-height: 90%;
+    max-width: 42%;
+    width: auto;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
 .carousel-label {
     display: inline-block;
-    min-width: 60%;
+    min-width: 40%;
     text-align: center;
     font-size: 1.8em;
     color: #fff;
@@ -254,7 +347,6 @@ header {
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
 }
 
-/* la imagen flecha.png apunta hacia la derecha por defecto; se rota para "anterior" */
 .carousel-arrow-prev {
     transform: rotate(180deg);
 }

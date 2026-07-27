@@ -55,7 +55,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script  type="module"  >
+    <script type="text/javascript">
         const boardButton = document.querySelector('.board-button');
         const topMenu = document.getElementById('topMenu');
         const closeMenu = document.getElementById('closeMenu');
@@ -68,6 +68,36 @@
         closeMenu.addEventListener('click', toggleMenu);
         topMenu.addEventListener('click', (event) => {
             if (event.target === topMenu) toggleMenu();
+        });
+ 
+        // 1. Inicializar la herramienta con tu llave pública
+        emailjs.init("Sn86-KK7B0R-ymWux");
+
+        // 2. Obtener los elementos del formulario mediante el DOM
+        const form = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('btn-submit');
+
+        // 3. Escuchar el evento cuando el usuario presiona enviar
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Detener la recarga automática
+
+            // Modificar el botón para indicar que está procesando
+            submitBtn.value = "Enviando...";
+            submitBtn.disabled = true;
+
+            // 4. Hacer la conexión y envío de datos
+            emailjs.sendForm('service_014tmfh', 'service_014tmfh', this)
+                .then(function() {
+                    alert('¡Mensaje enviado correctamente!');
+                    form.reset(); // Vaciar las casillas
+                }, function(error) {
+                    alert('No se pudo enviar: ' + JSON.stringify(error));
+                })
+                .finally(function() {
+                    // Devolver el botón a su estado original al terminar
+                    submitBtn.value = "Enviar Mensaje";
+                    submitBtn.disabled = false;
+                });
         });
     </script>
 </body>

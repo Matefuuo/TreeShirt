@@ -89,6 +89,11 @@ header {
     pointer-events: auto;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+}    
+
 .menu-panel {
     position: relative;
     width: 200px;
